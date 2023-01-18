@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.mig</groupId>
     <artifactId>parent</artifactId>
-    <version>10.0.0</version>
+    <version>11.0.0</version>
     <name>The root maven POM artifact for MIG Projects</name>
     <packaging>pom</packaging>
 
@@ -13,23 +13,23 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <version.maven.plugin.annotations>3.6.0</version.maven.plugin.annotations>
-        <version.maven.plugin.api>3.6.2</version.maven.plugin.api>
-        <version.maven.plugin.assembly>3.1.1</version.maven.plugin.assembly>
+        <version.maven.plugin.annotations>3.6.4</version.maven.plugin.annotations>
+        <version.maven.plugin.api>3.8.5</version.maven.plugin.api>
+        <version.maven.plugin.assembly>3.3.0</version.maven.plugin.assembly>
         <version.maven.plugin.rat>0.13</version.maven.plugin.rat>
-        <version.maven.plugin.dependency>3.1.1</version.maven.plugin.dependency>
-        <version.maven.plugin.buildnumber>1.4</version.maven.plugin.buildnumber>
-        <version.maven.plugin.war>3.2.3</version.maven.plugin.war>
-        <version.maven.plugin.jar>3.1.2</version.maven.plugin.jar>
-        <version.maven.plugin.compiler>3.8.1</version.maven.plugin.compiler>
-        <version.maven.plugin.release>2.5.3</version.maven.plugin.release>
-        <version.maven.plugin.surefire>2.22.2</version.maven.plugin.surefire>
-        <version.maven.plugin.source>3.1.0</version.maven.plugin.source>
-        <version.maven.plugin.site>3.8.2</version.maven.plugin.site>
-        <version.maven.plugin.wagon-webdav-jackrabbit>3.3.3</version.maven.plugin.wagon-webdav-jackrabbit>
-        <version.maven.plugin.javadoc>3.1.1</version.maven.plugin.javadoc>
-        <version.maven.plugin.enforcer>1.4.1</version.maven.plugin.enforcer>
-        <version.maven.plugin.checkstyle>3.1.0</version.maven.plugin.checkstyle>
+        <version.maven.plugin.dependency>3.3.0</version.maven.plugin.dependency>
+        <version.maven.plugin.buildnumber>3.0.0</version.maven.plugin.buildnumber>
+        <version.maven.plugin.war>3.3.2</version.maven.plugin.war>
+        <version.maven.plugin.jar>3.2.2</version.maven.plugin.jar>
+        <version.maven.plugin.compiler>3.10.1</version.maven.plugin.compiler>
+        <version.maven.plugin.release>3.0.0-M5</version.maven.plugin.release>
+        <version.maven.plugin.surefire>3.0.0-M6</version.maven.plugin.surefire>
+        <version.maven.plugin.source>3.2.1</version.maven.plugin.source>
+        <version.maven.plugin.site>4.0.0-M1</version.maven.plugin.site>
+        <version.maven.plugin.wagon-webdav-jackrabbit>3.5.1</version.maven.plugin.wagon-webdav-jackrabbit>
+        <version.maven.plugin.javadoc>3.4.0</version.maven.plugin.javadoc>
+        <version.maven.plugin.enforcer>3.0.0</version.maven.plugin.enforcer>
+        <version.maven.plugin.checkstyle>3.1.2</version.maven.plugin.checkstyle>
 
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
         <currentYearDynamic>${maven.build.timestamp}</currentYearDynamic>
@@ -77,6 +77,13 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <version>${version.maven.plugin.checkstyle}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.puppycrawl.tools</groupId>
+                            <artifactId>checkstyle</artifactId>
+                            <version>10.3</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
 
             </plugins>
@@ -148,8 +155,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${version.maven.plugin.compiler}</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <release>17</release>
                 </configuration>
             </plugin>
 
